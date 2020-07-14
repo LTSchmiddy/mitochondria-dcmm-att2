@@ -1,0 +1,110 @@
+Is Source: True
+Is Build: False
+Exec Dir: D:\Github Repos\mitochondria-dcmm-att2
+D:\Github Repos\mitochondria-dcmm-att2\templates
+D:\Github Repos\mitochondria-dcmm-att2\static
+ Found Free Port @: 10000
+[2020-07-14 19:21:43,287] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:43] "[37mGET /startup HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:43,306] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:43] "[37mGET /static/libs/bootstrap/css/bootstrap.css HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:43,318] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:43] "[37mGET /static/libs/josdejong-json-editor/jsoneditor.min.css HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:43,321] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:43] "[37mGET /static/styles/main.css HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:43,324] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:43] "[37mGET /static/styles/fa5-icons.css HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:43,328] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:43] "[37mGET /static/libs/jquery/jquery.js HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:43,334] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:43] "[37mGET /static/libs/popper/popper.js HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:43,339] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:43] "[37mGET /static/libs/bootstrap/js/bootstrap.js HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:43,344] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:43] "[37mGET /static/libs/josdejong-json-editor/jsoneditor.js HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:43,374] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:43] "[37mGET /static/libs/sortablejs/Sortable.js HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:43,379] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:43] "[37mGET /static/scripts/python_wrapper_2.js HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:43,383] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:43] "[37mGET /static/scripts/common.js HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:43,386] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:43] "[37mGET /static/scripts/components/sidebar.js HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:43,389] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:43] "[37mGET /static/scripts/components/tab_section_view.js HTTP/1.1[0m" 200 -
+http://127.0.0.1:10000/startup
+Validating main.pak checksum...
+Running startup
+[2020-07-14 19:21:46,260] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:46] "[37mGET / HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:46,297] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:46] "[36mGET /static/libs/bootstrap/css/bootstrap.css HTTP/1.1[0m" 304 -
+[2020-07-14 19:21:46,331] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:46] "[36mGET /static/libs/josdejong-json-editor/jsoneditor.min.css HTTP/1.1[0m" 304 -
+[2020-07-14 19:21:46,346] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:46] "[36mGET /static/styles/main.css HTTP/1.1[0m" 304 -
+[2020-07-14 19:21:46,357] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:46] "[36mGET /static/styles/fa5-icons.css HTTP/1.1[0m" 304 -
+[2020-07-14 19:21:46,363] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:46] "[36mGET /static/libs/jquery/jquery.js HTTP/1.1[0m" 304 -
+[2020-07-14 19:21:46,376] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:46] "[36mGET /static/libs/popper/popper.js HTTP/1.1[0m" 304 -
+[2020-07-14 19:21:46,387] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:46] "[36mGET /static/libs/bootstrap/js/bootstrap.js HTTP/1.1[0m" 304 -
+[2020-07-14 19:21:46,395] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:46] "[36mGET /static/libs/josdejong-json-editor/jsoneditor.js HTTP/1.1[0m" 304 -
+[2020-07-14 19:21:46,407] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:46] "[36mGET /static/libs/sortablejs/Sortable.js HTTP/1.1[0m" 304 -
+[2020-07-14 19:21:46,420] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:46] "[36mGET /static/scripts/python_wrapper_2.js HTTP/1.1[0m" 304 -
+[2020-07-14 19:21:46,432] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:46] "[36mGET /static/scripts/common.js HTTP/1.1[0m" 304 -
+[2020-07-14 19:21:46,446] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:46] "[36mGET /static/scripts/components/sidebar.js HTTP/1.1[0m" 304 -
+[2020-07-14 19:21:46,463] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:46] "[36mGET /static/scripts/components/tab_section_view.js HTTP/1.1[0m" 304 -
+[2020-07-14 19:21:46,469] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:46] "[37mGET /static/scripts/extracted_file_type_processors/json_file.js HTTP/1.1[0m" 200 -
+['injected', '0', '1594761061-7803247']
+['user', '0', '1594696719-630086']
+['user', '0', '1594700240-6212456']
+['user', '0', '1594700243-0529063']
+['user', '0', '1594700565-8509824']
+['user', '0', '1594700653-5025434']
+['user', '0', '1594700722-6693306']
+['user', '0', '1594700744-9943266']
+['user', '0', '1594700928-4698503']
+['user', '0', '1594700931-4111958']
+['user', '0', '1594701341-8945067']
+['user', '0', '1594701392-1955218']
+['user', '0', '1594701500-175628']
+['user', '0', '1594701612-4240282']
+['user', '0', '1594701612-5497732']
+['user', '0', '1594702039-4262497']
+['user', '0', '1594702081-4752913']
+['user', '0', '1594702143-5833304']
+['user', '0', '1594702217-7622056']
+['user', '0', '1594702865-1846864']
+['user', '0', '1594702948-119199']
+['user', '0', '1594702948-4848673']
+['user', '0', '1594702968-014233']
+['user', '0', '1594702968-4129007']
+['user', '0', '1594702981-1906793']
+['user', '0', '1594703033-94782']
+['user', '0', '1594703101-3591976']
+['user', '0', '1594703101-3731897']
+['user', '0', '1594703115-135131']
+['user', '0', '1594703228-5964308']
+['user', '0', '1594703321-043384']
+['user', '0', '1594703450-859607']
+['user', '0', '1594703496-701314']
+['user', '0', '1594703540-04886']
+['user', '0', '1594703650-4414322']
+['user', '0', '1594703697-1148465']
+['user', '0', '1594703706-6362958']
+['user', '0', '1594703784-6874151']
+['user', '0', '1594703828-3593652']
+['user', '0', '1594703882-9151452']
+['user', '0', '1594703918-4819596']
+['user', '0', '1594703983-893751']
+['user', '0', '1594704028-8291247']
+['user', '0', '1594704044-1541257']
+['user', '0', '1594704053-8710413']
+['user', '0', '1594704067-7307422']
+['user', '0', '1594704115-2128382']
+['user', '0', '1594704730-3228674']
+['user', '0', '1594704751-7693565']
+['user', '0', '1594704758-681054']
+['user', '0', '1594704783-7052367']
+['user', '0', '1594705008-7462578']
+['user', '0', '1594705085-2810519']
+['user', '0', '1594705283-0993984']
+['user', '0', '1594705341-1205437']
+['user', '0', '1594705501-6844559']
+['user', '0', '1594705501-7584114']
+['user', '0', '1594705504-8810894']
+['user', '0', '1594705517-5640588']
+['user', '1', '1593651318-0']
+[2020-07-14 19:21:46,943] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:46] "[37mGET /static/libs/josdejong-json-editor/img/jsoneditor-icons.svg HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:47,199] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:47] "[37mGET /static/libs/fontawesome-free-5.13.1-web/webfonts/fa-solid-900.woff2 HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:49,570] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:49] "[37mGET /panes/mod_editor/extract_dir_listing HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:55,643] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:55] "[36mGET /static/libs/bootstrap/css/bootstrap.css HTTP/1.1[0m" 304 -
+[2020-07-14 19:21:55,728] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:55] "[36mGET /static/libs/josdejong-json-editor/jsoneditor.min.css HTTP/1.1[0m" 304 -
+[2020-07-14 19:21:55,731] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:55] "[36mGET /static/styles/main.css HTTP/1.1[0m" 304 -
+[2020-07-14 19:21:55,733] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:55] "[36mGET /static/styles/fa5-icons.css HTTP/1.1[0m" 304 -
+[2020-07-14 19:21:55,735] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:55] "[33mGET /static/libs/popper/popper.js.map HTTP/1.1[0m" 404 -
+[2020-07-14 19:21:55,739] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:55] "[37mGET /static/libs/bootstrap/js/bootstrap.js.map HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:55,814] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:55] "[37mGET /static/libs/bootstrap/css/bootstrap.css.map HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:55,823] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:55] "[37mGET /static/styles/main.css.map HTTP/1.1[0m" 200 -
+[2020-07-14 19:21:55,827] INFO in _internal: 127.0.0.1 - - [14/Jul/2020 19:21:55] "[37mGET /static/styles/fa5-icons.css.map HTTP/1.1[0m" 200 -

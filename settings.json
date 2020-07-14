@@ -1,0 +1,44 @@
+{
+    "window": {
+        "x": 0,
+        "y": 1913,
+        "width": 974,
+        "height": 1047,
+        "web-engine": "cef"
+    },
+    "interface": {
+        "app-root": "",
+        "pages": {
+            "template-dir": "templates",
+            "static-dir": "static"
+        },
+        "view-panes": {
+            "template-dir": "templates",
+            "static-dir": "static"
+        },
+        "api": {
+            "template-dir": "apl_templates",
+            "static-dir": "static"
+        },
+        "flask-address": "127.0.0.1",
+        "flask-port": 10000,
+        "jquery-icon-mode": false
+    },
+    "dirs": {
+        "game_directory": "D:/Project Z/codenameVaporWareLib/steamapps/common/Dead Cells",
+        "tools_dir": "D:/Project Z/codenameVaporWareLib/steamapps/common/Dead Cells/ModTools",
+        "operating_dir": "./mdcmm",
+        "saves_backup_dir": "saves",
+        "game_save_dir": "./save",
+        "sync_save_dir": "",
+        "using_steam_sync": false,
+        "extraction_profile": "extract",
+        "steam_workshop_folder": "../../workshop/content/588650"
+    },
+    "files": {
+        "main_pak": "res.pak",
+        "master_pak": "res_master.pak",
+        "master_backup_pak": "res_master_backup.pak",
+        "main_pak_checksum": "92fc17e788a24f02a4dd104d97c54e86"
+    }
+}

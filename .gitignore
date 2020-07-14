@@ -1,1 +1,10 @@
 /error.log
+/build/
+/dist/
+/mdcmm/
+/node_modules/
+/venv/
+/blob_storage/
+/static/bower_components/
+
+*.pyc

@@ -1,0 +1,268 @@
+{
+    "dirs": {
+        "api_templates": {
+            "dirs": {},
+            "files": {},
+            "path": "./api_templates"
+        },
+        "src": {
+            "dirs": {
+                "data": {
+                    "dirs": {},
+                    "files": {
+                        "__init__.py": "./src/data/__init__.py",
+                        "std_handler.py": "./src/data/std_handler.py",
+                        "std_handler_old.py": "./src/data/std_handler_old.py",
+                        "toolwrapper.py": "./src/data/toolwrapper.py"
+                    },
+                    "path": "./src/data"
+                },
+                "interface_flask": {
+                    "dirs": {},
+                    "files": {
+                        "__init__.py": "./src/interface_flask/__init__.py",
+                        "api.py": "./src/interface_flask/api.py",
+                        "pages.py": "./src/interface_flask/pages.py",
+                        "panes.py": "./src/interface_flask/panes.py",
+                        "server.py": "./src/interface_flask/server.py"
+                    },
+                    "path": "./src/interface_flask"
+                },
+                "settings": {
+                    "dirs": {},
+                    "files": {
+                        "__init__.py": "./src/settings/__init__.py",
+                        "paths.py": "./src/settings/paths.py"
+                    },
+                    "path": "./src/settings"
+                },
+                "viewport": {
+                    "dirs": {
+                        "bg_tasks": {
+                            "dirs": {},
+                            "files": {
+                                "__init__.py": "./src/viewport/bg_tasks/__init__.py",
+                                "bg_startup.py": "./src/viewport/bg_tasks/bg_startup.py"
+                            },
+                            "path": "./src/viewport/bg_tasks"
+                        },
+                        "call_js_scripts": {
+                            "dirs": {},
+                            "files": {
+                                "update-seek-bar.js": "./src/viewport/call_js_scripts/update-seek-bar.js"
+                            },
+                            "path": "./src/viewport/call_js_scripts"
+                        },
+                        "js_api": {
+                            "dirs": {
+                                "modules": {
+                                    "dirs": {},
+                                    "files": {
+                                        "file.py": "./src/viewport/js_api/modules/file.py",
+                                        "mod_settings.py": "./src/viewport/js_api/modules/mod_settings.py",
+                                        "pak.py": "./src/viewport/js_api/modules/pak.py",
+                                        "std.py": "./src/viewport/js_api/modules/std.py"
+                                    },
+                                    "path": "./src/viewport/js_api/modules"
+                                }
+                            },
+                            "files": {
+                                "__init__.py": "./src/viewport/js_api/__init__.py",
+                                "method_loading.py": "./src/viewport/js_api/method_loading.py"
+                            },
+                            "path": "./src/viewport/js_api"
+                        }
+                    },
+                    "files": {
+                        "__init__.py": "./src/viewport/__init__.py",
+                        "call_js.py": "./src/viewport/call_js.py"
+                    },
+                    "path": "./src/viewport"
+                }
+            },
+            "files": {
+                "generate_py_api.py": "./src/generate_py_api.py",
+                "mitochondria.py": "./src/mitochondria.py",
+                "mitochondria.spec": "./src/mitochondria.spec"
+            },
+            "path": "./src"
+        },
+        "static": {
+            "dirs": {
+                "scripts": {
+                    "dirs": {
+                        "components": {
+                            "dirs": {},
+                            "files": {
+                                "sidebar.js": "./static/scripts/components/sidebar.js",
+                                "tab_section_view.js": "./static/scripts/components/tab_section_view.js",
+                                "time_func.js": "./static/scripts/components/time_func.js"
+                            },
+                            "path": "./static/scripts/components"
+                        },
+                        "extracted_file_type_processors": {
+                            "dirs": {},
+                            "files": {
+                                "json_file.js": "./static/scripts/extracted_file_type_processors/json_file.js"
+                            },
+                            "path": "./static/scripts/extracted_file_type_processors"
+                        }
+                    },
+                    "files": {
+                        "common.js": "./static/scripts/common.js",
+                        "python_wrapper_2.js": "./static/scripts/python_wrapper_2.js"
+                    },
+                    "path": "./static/scripts"
+                },
+                "styles": {
+                    "dirs": {
+                        "sheets": {
+                            "dirs": {
+                                "components": {
+                                    "dirs": {},
+                                    "files": {
+                                        "bottombar.scss": "./static/styles/sheets/components/bottombar.scss",
+                                        "navbar.scss": "./static/styles/sheets/components/navbar.scss",
+                                        "sidebar.scss": "./static/styles/sheets/components/sidebar.scss"
+                                    },
+                                    "path": "./static/styles/sheets/components"
+                                },
+                                "views": {
+                                    "dirs": {},
+                                    "files": {
+                                        "mod_editor.scss": "./static/styles/sheets/views/mod_editor.scss",
+                                        "saves.scss": "./static/styles/sheets/views/saves.scss"
+                                    },
+                                    "path": "./static/styles/sheets/views"
+                                }
+                            },
+                            "files": {
+                                "global.scss": "./static/styles/sheets/global.scss"
+                            },
+                            "path": "./static/styles/sheets"
+                        }
+                    },
+                    "files": {
+                        "main.scss": "./static/styles/main.scss"
+                    },
+                    "path": "./static/styles"
+                }
+            },
+            "files": {
+                "bower.json": "./static/bower.json"
+            },
+            "path": "./static"
+        },
+        "templates": {
+            "dirs": {
+                "common": {
+                    "dirs": {
+                        "components": {
+                            "dirs": {},
+                            "files": {
+                                "bottombar.html": "./templates/common/components/bottombar.html",
+                                "navbar.html": "./templates/common/components/navbar.html"
+                            },
+                            "path": "./templates/common/components"
+                        }
+                    },
+                    "files": {
+                        "base.html": "./templates/common/base.html",
+                        "common_ui.html": "./templates/common/common_ui.html"
+                    },
+                    "path": "./templates/common"
+                },
+                "components": {
+                    "dirs": {
+                        "mod_editor": {
+                            "dirs": {
+                                "file_processors": {
+                                    "dirs": {},
+                                    "files": {},
+                                    "path": "./templates/components/mod_editor/file_processors"
+                                }
+                            },
+                            "files": {
+                                "extract_dir_sidebar.html": "./templates/components/mod_editor/extract_dir_sidebar.html",
+                                "file_content_area.html": "./templates/components/mod_editor/file_content_area.html"
+                            },
+                            "path": "./templates/components/mod_editor"
+                        }
+                    },
+                    "files": {
+                        "settings_editor.html": "./templates/components/settings_editor.html"
+                    },
+                    "path": "./templates/components"
+                },
+                "old": {
+                    "dirs": {},
+                    "files": {
+                        "library.html": "./templates/old/library.html",
+                        "lorem_ipsum.html": "./templates/old/lorem_ipsum.html",
+                        "sidebar_logic.html": "./templates/old/sidebar_logic.html"
+                    },
+                    "path": "./templates/old"
+                },
+                "styles": {
+                    "dirs": {},
+                    "files": {},
+                    "path": "./templates/styles"
+                },
+                "view_pane_templates": {
+                    "dirs": {
+                        "mod_editor": {
+                            "dirs": {
+                                "editors": {
+                                    "dirs": {
+                                        "common": {
+                                            "dirs": {},
+                                            "files": {
+                                                "editor_base.html": "./templates/view_pane_templates/mod_editor/editors/common/editor_base.html"
+                                            },
+                                            "path": "./templates/view_pane_templates/mod_editor/editors/common"
+                                        }
+                                    },
+                                    "files": {
+                                        "json_editor.html": "./templates/view_pane_templates/mod_editor/editors/json_editor.html",
+                                        "unknown_file_type_editor.html": "./templates/view_pane_templates/mod_editor/editors/unknown_file_type_editor.html"
+                                    },
+                                    "path": "./templates/view_pane_templates/mod_editor/editors"
+                                }
+                            },
+                            "files": {
+                                "editor_tab.html": "./templates/view_pane_templates/mod_editor/editor_tab.html",
+                                "extract_dir_listing.html": "./templates/view_pane_templates/mod_editor/extract_dir_listing.html"
+                            },
+                            "path": "./templates/view_pane_templates/mod_editor"
+                        }
+                    },
+                    "files": {},
+                    "path": "./templates/view_pane_templates"
+                },
+                "views": {
+                    "dirs": {},
+                    "files": {
+                        "mod_editor.html": "./templates/views/mod_editor.html",
+                        "saves.html": "./templates/views/saves.html"
+                    },
+                    "path": "./templates/views"
+                }
+            },
+            "files": {
+                "index.html": "./templates/index.html",
+                "launch_settings.html": "./templates/launch_settings.html",
+                "startup.html": "./templates/startup.html"
+            },
+            "path": "./templates"
+        }
+    },
+    "files": {
+        ".gitignore": "./.gitignore",
+        "debug.log": "./debug.log",
+        "dir_tree.json": "./dir_tree.json",
+        "generate_project_stats.py": "./generate_project_stats.py",
+        "package-lock.json": "./package-lock.json",
+        "settings.json": "./settings.json"
+    },
+    "path": "./"
+}

@@ -1,0 +1,29 @@
+[0710/134200.555:ERROR:tcp_socket_win.cc(336)] bind() returned an error: An attempt was made to access a socket in a way forbidden by its access permissions. (0x271D)
+[0710/134200.562:ERROR:devtools_http_handler.cc(292)] Cannot start http server for devtools. Stop devtools.
+[0710/135212.099:ERROR:tcp_socket_win.cc(336)] bind() returned an error: An attempt was made to access a socket in a way forbidden by its access permissions. (0x271D)
+[0710/135212.099:ERROR:devtools_http_handler.cc(292)] Cannot start http server for devtools. Stop devtools.
+[0710/141514.520:ERROR:tcp_socket_win.cc(336)] bind() returned an error: An attempt was made to access a socket in a way forbidden by its access permissions. (0x271D)
+[0710/141514.520:ERROR:devtools_http_handler.cc(292)] Cannot start http server for devtools. Stop devtools.
+[0710/141917.563:ERROR:tcp_socket_win.cc(336)] bind() returned an error: An attempt was made to access a socket in a way forbidden by its access permissions. (0x271D)
+[0710/141917.728:ERROR:devtools_http_handler.cc(292)] Cannot start http server for devtools. Stop devtools.
+[0710/142213.745:ERROR:tcp_socket_win.cc(336)] bind() returned an error: An attempt was made to access a socket in a way forbidden by its access permissions. (0x271D)
+[0710/142213.745:ERROR:devtools_http_handler.cc(292)] Cannot start http server for devtools. Stop devtools.
+[0710/145017.354:ERROR:broker_win.cc(57)] Error reading broker pipe: The pipe has been ended. (0x6D)
+[0710/145017.384:ERROR:broker_win.cc(134)] Error sending sync broker message: The pipe is being closed. (0xE8)
+[0710/150338.655:ERROR:broker_win.cc(134)] Error sending sync broker message: The pipe is being closed. (0xE8)
+[0710/150338.668:ERROR:broker_win.cc(134)] Error sending sync broker message: The pipe is being closed. (0xE8)
+[0710/153417.566:ERROR:tcp_socket_win.cc(336)] bind() returned an error: An attempt was made to access a socket in a way forbidden by its access permissions. (0x271D)
+[0710/153417.566:ERROR:devtools_http_handler.cc(292)] Cannot start http server for devtools. Stop devtools.
+[0710/155707.258:ERROR:broker_win.cc(134)] Error sending sync broker message: The pipe is being closed. (0xE8)
+[0710/161142.057:ERROR:tcp_socket_win.cc(336)] bind() returned an error: An attempt was made to access a socket in a way forbidden by its access permissions. (0x271D)
+[0710/161142.057:ERROR:devtools_http_handler.cc(292)] Cannot start http server for devtools. Stop devtools.
+[0710/161753.749:ERROR:tcp_socket_win.cc(336)] bind() returned an error: An attempt was made to access a socket in a way forbidden by its access permissions. (0x271D)
+[0710/161753.750:ERROR:devtools_http_handler.cc(292)] Cannot start http server for devtools. Stop devtools.
+[0710/175913.979:ERROR:broker_win.cc(134)] Error sending sync broker message: The pipe is being closed. (0xE8)
+[0712/140503.440:ERROR:quota_settings.cc(109)] Unable to compute QuotaSettings.
+[0712/152848.386:ERROR:broker_win.cc(134)] Error sending sync broker message: The pipe is being closed. (0xE8)
+[0712/152848.480:ERROR:broker_win.cc(134)] Error sending sync broker message: The pipe is being closed. (0xE8)
+[0713/184513.106:ERROR:CONSOLE(506)] "Uncaught TypeError: Cannot read property 'nodeType' of null", source: chrome-devtools://devtools/elements/elements_module.js (506)
+[0713/233548.974:ERROR:broker_win.cc(134)] Error sending sync broker message: The pipe is being closed. (0xE8)
+[0713/233549.039:ERROR:broker_win.cc(134)] Error sending sync broker message: The pipe is being closed. (0xE8)
+[0714/133613.050:ERROR:broker_win.cc(134)] Error sending sync broker message: The pipe is being closed. (0xE8)
