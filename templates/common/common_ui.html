@@ -1,0 +1,17 @@
+{% extends "common/base.html" %}
+
+
+{% block body %}
+    {% include "common/components/navbar.html" %}
+
+    <div class="middle-field">
+
+    {% block content %} {% endblock %}
+
+
+    </div>
+    {% include "common/components/bottombar.html" %}
+
+
+
+{% endblock %}

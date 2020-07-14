@@ -1,0 +1,74 @@
+{#<div class="sidebar ui-bar" id="lib-sidebar">#}
+{#    <div id="sidebar-content" class="sidebar-content">#}
+{##}
+{##}
+{#    </div>#}
+{#</div>#}
+
+
+<script>
+    $(document).ready(function() {
+        let sidebar = document.getElementById('lib-sidebar');
+        let contentField = document.getElementById('content-field');
+        if (sidebar) {
+            let resizer = document.createElement('div');
+            resizer.className = 'drag-handle';
+            {#resizer.style.width = '6px';#}
+            resizer.style.height = '100%';
+            sidebar.appendChild(resizer);
+            resizer.addEventListener('mousedown', initResize, false);
+        }
+
+        function initResize(e) {
+            window.addEventListener('mousemove', Resize, false);
+            window.addEventListener('mouseup', stopResize, false);
+            {#$('#mainArea.content, #tabs iframe').addClass('marginLeft');#}
+        }
+
+        function Resize(e) {
+            sidebar.style.width = (e.clientX - sidebar.offsetLeft) + 'px';
+
+            if (contentField !== null){
+                contentField.style.width = 'calc(100vw - ' + (e.clientX - sidebar.offsetLeft) + 'px)';
+            }
+
+            {#$('sidebar-resizable').css('margin-left', (e.clientX - element.offsetLeft) + 'px');#}
+            {#$('#tabs iframe').css('margin-left', (element.offsetLeft + 40) + 'px');#}
+        }
+
+        function stopResize(e) {
+            window.removeEventListener('mousemove', Resize, false);
+            window.removeEventListener('mouseup', stopResize, false);
+            {#$('#tabs iframe').css('margin-left', element.offsetLeft + 'px');#}
+        }
+    });
+
+
+</script>
+
+
+<!-- <div id="jsoneditor" style="width: 400px; height: 400px;"></div>
+
+<script>
+
+    const container = document.getElementById("jsoneditor")
+    // create the editor
+    const options = {}
+    const editor = new JSONEditor(container, options)
+
+    // set jn
+    const initialJson = {
+        "Array": [1, 2, 3],
+        "Boolean": true,
+        "Null": null,
+        "Number": 123,
+        "Object": {"a": "b", "c": "d"},
+        "String": "Hello World"
+    }
+    editor.set(initialJson)
+
+    // get json
+    const updatedJson = editor.get()
+
+
+</script>-->

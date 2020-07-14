@@ -1,0 +1,229 @@
+
+<div class="content-field" id="content-field">
+
+
+    <div id="mod-editor-tab-area" class="tab-area">
+        <div id="mod-editor-show-all-tab" class="editor-tab">
+            <button onclick="extracted_file_show_editor('all')" class="filename-btn">Show All</button>
+        </div>
+        <span id="mod-editor-file-tabs"></span>
+
+    </div>
+    <div id="mod-editor-editor-area" class="editor-area"></div>
+
+</div>
+
+
+<script>
+    let extracted_file_tab_area = $("#mod-editor-tab-area");
+    let extracted_file_tabs = $("#mod-editor-file-tabs");
+    let extracted_file_editor_area = $("#mod-editor-editor-area");
+
+    let extracted_file_show_all_tab_btn = $("#mod-editor-show-all-tab");
+
+    let extracted_file_is_showing_all_tabs = false;
+
+    const mod_editor_opened_tabs = {};
+
+    const tab_sorter = Sortable.create(extracted_file_tabs.get()[0], {
+            // Changed sorting within list
+        onUpdate: function (/**Event*/evt) {
+            extracted_file_sort_editors_to_tab_order();
+        },
+        animation: 150
+    });
+
+    const editor_sorter = Sortable.create(extracted_file_editor_area.get()[0], {
+            // Changed sorting within list
+        onUpdate: function (/**Event*/evt) {
+            extracted_file_sort_tabs_to_editor_order();
+        },
+        {#handle: '.editor-topbar',#}
+        handle: '.editor-drag-handle',
+        animation: 150
+    });
+
+</script>
+<script src="/static/scripts/extracted_file_type_processors/json_file.js"></script>
+<script>
+
+    function extracted_file_load(name, path) {
+        if (mod_editor_opened_tabs.hasOwnProperty(path)) {
+            console.log("File already open...");
+            extracted_file_show_editor(path);
+
+            return;
+        }
+
+
+        {#console.log(`Loading ${name}: ${path}`);#}
+        // Load Tab:
+        $.post("/panes/mod_editor/editor_tab", {name: name, path: path}, (data, status) => {
+            extracted_file_tabs.get()[0].innerHTML += data;
+
+            mod_editor_opened_tabs[path] = {
+                name: name,
+                path: path,
+                type: 'unknown',
+                data_obj: null
+            };
+
+            if (path.endsWith(".json")) {
+                mod_editor_opened_tabs[path].type = 'json';
+                _extracted_file_load_json_editor(name, path);
+
+            } else {
+
+
+            }
+        });
+
+    }
+
+    function extracted_file_get_tab(path) {
+        if (!mod_editor_opened_tabs.hasOwnProperty(path)) {
+            console.log(`'${path}' not opened...`);
+            return null;
+        }
+
+        return extracted_file_tabs.children(`div[data-path="${path}"]`);
+    }
+
+    function extracted_file_get_editor(path) {
+        if (!mod_editor_opened_tabs.hasOwnProperty(path)) {
+            console.log(`'${path}' not opened...`);
+            return null;
+        }
+
+        return extracted_file_editor_area.children(`div[data-path="${path}"]`);
+    }
+
+    function extracted_file_show_editor(path) {
+        if (path !== "" && path !== "all" && !mod_editor_opened_tabs.hasOwnProperty(path)) {
+            console.log(`'${path}' not opened...`);
+            return;
+        }
+
+        for (const [key, value] of Object.entries(mod_editor_opened_tabs)) {
+            {#console.log(key);#}
+            if (key === path || path === "all") {
+                {#console.log("to show");#}
+                extracted_file_get_editor(key).show();
+
+                let drag_handle_elem = $(`.editor-drag-handle[data-for-path='${key}']`);
+
+                if (path !== "all") {
+                    extracted_file_get_tab(key).addClass('active-tab');
+                    drag_handle_elem.hide();
+
+                } else {
+                    extracted_file_get_tab(key).removeClass('active-tab');
+                    drag_handle_elem.show();
+                }
+            }
+            else {
+                {#console.log("to hide");#}
+                extracted_file_get_editor(key).hide();
+                extracted_file_get_tab(key).removeClass('active-tab');
+            }
+        }
+
+        extracted_file_show_all_tab_btn = $("#mod-editor-show-all-tab");
+        if (path === "all") {
+            console.log("showing all");
+            extracted_file_is_showing_all_tabs = true;
+            extracted_file_show_all_tab_btn.addClass("active-tab");
+
+        } else {
+            extracted_file_show_all_tab_btn.removeClass("active-tab");
+            extracted_file_is_showing_all_tabs = false;
+        }
+    }
+
+    function extracted_file_sort_editors_to_tab_order() {
+
+        let path_order = extracted_file_tabs.children('div.editor-tab').map((i, el)=>{
+
+            console.log(el);
+            {#return el;#}
+            return el.getAttribute('data-path');
+
+        }).get();
+
+
+        console.log(path_order);
+
+        extracted_file_editor_area.children('div.editor-container').sort(function (a, b) {
+
+            let index_a = path_order.indexOf($(a).data('path'));
+            let index_b = path_order.indexOf($(b).data('path'));
+
+            {#console.log(index_a);#}
+            {#console.log(index_b);#}
+
+            return (index_a < index_b) ? -1 : (index_a > index_b) ? 1 : 0;
+
+        }).appendTo(extracted_file_editor_area);
+
+    }
+
+    function extracted_file_sort_tabs_to_editor_order() {
+
+
+
+        let path_order = extracted_file_editor_area.children('div.editor-container').map((i, el)=>{
+
+            return el.getAttribute('data-path');
+
+        }).get();
+
+        console.log(path_order);
+
+        extracted_file_tabs.children('div.editor-tab').sort(function (a, b) {
+
+            let index_a = path_order.indexOf($(a).data('path'));
+            let index_b = path_order.indexOf($(b).data('path'));
+
+            {#console.log(index_a);#}
+            {#console.log(index_b);#}
+
+            return (index_a < index_b) ? -1 : (index_a > index_b) ? 1 : 0;
+
+        }).appendTo(extracted_file_tabs);
+
+    }
+    /*
+    function extracted_file_save(path) {
+        if (!mod_editor_opened_tabs.hasOwnProperty(path)) {
+            console.log(`'${path}' not opened...`);
+            return;
+        }
+
+    }
+
+
+    function extracted_file_revert(path) {
+        if (!mod_editor_opened_tabs.hasOwnProperty(path)) {
+            console.log(`'${path}' not opened...`);
+            return;
+        }
+
+    }*/
+
+    function extracted_file_close(path) {
+        if (!mod_editor_opened_tabs.hasOwnProperty(path)) {
+            console.log(`'${path}' not opened...`);
+            return;
+        }
+
+        extracted_file_get_tab(path).remove();
+        extracted_file_get_editor(path).remove();
+
+        {#console.log(mod_editor_opened_tabs[path].tab());#}
+
+        {#tab_area.children(`div[data-path="${path}"]`).remove();#}
+        delete mod_editor_opened_tabs[path];
+    }
+
+
+</script>

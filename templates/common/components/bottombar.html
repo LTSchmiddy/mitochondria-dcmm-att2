@@ -1,0 +1,97 @@
+<div class="bottom-bar ui-bar">
+    <div class="playback-buttons-container">
+        <button class="btn-primary" onclick="play_dead_cells()">Play Game</button>
+
+        <span id="bottom-bar-is-working-messsage"></span>
+    </div>
+
+    <div class="tab-container">
+        <button id="save-view-button" class="btn-secondary main-tab" onclick="set_view('save-view')">Saves</button>
+        <button id="mod-editor-view-button" class="btn-secondary main-tab" onclick="set_view('mod-editor-view')">Mod Editor</button>
+        <button id="settings-editor-view-button" class="btn-secondary secondary-tab" onclick="set_view('settings-editor-view')">
+            <span class="fas fa-cog"></span>
+        </button>
+        <button id="python-console-view-button" class="btn-secondary secondary-tab" onclick="set_view('python-console-view')">
+            <span class="fas fa-desktop"></span>
+        </button>
+    </div>
+
+</div>
+
+
+<script>
+
+    const bottom_bar_is_running_message = $('#bottom-bar-is-working-messsage');
+
+    window.addEventListener('pywebviewready', function() {
+
+        async function tool_update_check() {
+            if (window.toolman__is_mproc_running) {
+                bottom_bar_is_running_message.text("Processing...");
+            } else {
+                bottom_bar_is_running_message.text("");
+            }
+        }
+
+
+        async function run_tool_check_update() {
+            await tool_update_check();
+            setTimeout(run_tool_check_update, 1000);
+        }
+
+        run_tool_check_update();
+    });
+
+
+
+    function set_view(view_id) {
+        views.forEach((value, index, views) => {
+            let this_id = value.attr('id');
+
+            let button_tag = this_id + "-button";
+
+            let related_button = $("#" + button_tag);
+
+            if (this_id === view_id){
+                value.show();
+
+                if (related_button !== null) {
+                    related_button.addClass('active-view');
+                }
+            } else {
+                value.hide();
+                if (related_button !== null) {
+                    related_button.removeClass('active-view');
+                }
+            }
+        });
+    }
+
+
+{#    function set_view(view_id) {
+        views.forEach((value, index, views) => {
+            let this_id = value.attr('id');
+
+            let button_tag = this_id + "-button";
+
+            let related_button = $("#" + button_tag);
+
+            if (this_id === view_id){
+            value.show();
+
+                if (related_button !== null) {
+                    related_button.addClass('active-view');
+                }
+            } else {
+                value.hide();
+                if (related_button !== null) {
+                    related_button.removeClass('active-view');
+                }
+            }
+        });
+    }#}
+
+    {#set_view('mod-editor-view');#}
+    set_view('save-view');
+
+</script>

@@ -1,0 +1,71 @@
+<nav class="main-nav ui-bar navbar navbar-expand-sm">
+
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+{#            <a class="nav-link btn" href="#">Link 1</a>#}
+              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                  File
+              </button>
+              <div class="dropdown-menu">
+{#                  <button class="dropdown-item" onclick="py.playback.command('')">Open File</button>#}
+                  <button class="dropdown-item" onclick="pywebview.api.quit()">Quit</button>
+
+              </div>
+        </li>
+        <li class="nav-item dropdown">
+{#            <a class="nav-link" href="#">Link 2</a>#}
+              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                  Edit
+              </button>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Link 1</a>
+                  <a class="dropdown-item" href="#">Link 2</a>
+                  <a class="dropdown-item" href="#">Link 3</a>
+              </div>
+        </li>
+        <li class="nav-item dropdown">
+              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                  View
+              </button>
+              <div class="dropdown-menu">
+{#                  <button class="dropdown-item" onclick="">Open VLC Interface</button>#}
+{#                  <a class="dropdown-item" href="{{ url_for('pages.index') }}">Library View</a>#}
+              </div>
+{#            <a class="nav-link" href="#">Link 3</a>#}
+        </li>
+        <li class="nav-item dropdown">
+              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                  Data
+              </button>
+              <div class="dropdown-menu">
+                  <button class="dropdown-item" onclick="py.pak.unpack_all()">Unpack All</button>
+                  <button class="dropdown-item" onclick="py.pak.rebuild_all()">Rebuild All</button>
+{#                  <button class="dropdown-item" href="#">Link 3</button>#}
+              </div>
+{#            <a class="nav-link" href="#">Link 3</a>#}
+        </li>
+        <li class="nav-item dropdown">
+              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                  Help
+              </button>
+              <div class="dropdown-menu">
+                   <button class="dropdown-item" onclick="py.open_debug()">Open Debug Console</button>
+              </div>
+        </li>
+    </ul>
+
+</nav>
+
+    {# <li class="nav-item dropdown">
+              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                  Library
+              </button>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Link 1</a>
+                  <a class="dropdown-item" href="#">Link 2</a>
+                  <a class="dropdown-item" href="#">Link 3</a>
+              </div>
+            <a class="nav-link" href="#">Link 3</a>
+        </li>
+
+#}

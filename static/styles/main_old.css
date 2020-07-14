@@ -1,0 +1,185 @@
+
+:root {
+    --sidebar-width: 400px;
+}
+
+body {
+    background-color: #E6E6E6;
+    font-size: 15px;
+}
+
+.ui-bar {
+    color: #111111;
+    background-color: #7777ff;
+
+}
+
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+
+.middle-field {
+    position: fixed;
+    top: 40px;
+
+    /*display: flex;*/
+    left: 0;
+
+    /*overflow: auto;*/
+    overflow: hidden;
+    height: calc(100% - 110px);
+    width: 100%;
+    z-index: -5;
+}
+
+.drag-handle{
+    width: 6px;
+    height: 100%;
+    background-color: black;
+    cursor: e-resize;
+    float: right;
+
+}
+
+
+.sidebar {
+    /*display: block;*/
+    position: absolute;
+    left: 0;
+    height: 100%;
+
+    /*width: 50vw;*/
+    /*width: 30%;*/
+    width: var(--sidebar-width);
+}
+
+div.sidebar-content {
+    margin: 0;
+    padding: 20px;
+    width: calc(100% - 6px);
+    /*width: calc(100%);*/
+    height: calc(100vh - 110px);
+    float: left;
+    overflow: scroll;
+    overflow-wrap: unset;
+}
+
+div.sidebar-content a {
+    display: block;
+    /*width: 100%;*/
+    /*min-height: 50px;*/
+    /*font-size: 20px*/
+}
+
+
+/*ul.sidebar-content button {*/
+/*    display: block;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    padding: 10px 20%;*/
+/*    text-align: left;*/
+/*}*/
+
+div.sidebar-content a:hover {
+    background-color: #ffffff99;
+    color: #5555ff;
+}
+
+div.sidebar-content summary:hover {
+    background-color: #ffffff99;
+    color: #5555ff;
+}
+
+div.sidebar-content a.sidebar-active {
+    background-color: #ffffff;
+}
+
+
+
+.content-field {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    overflow: auto;
+    /*width: 70%;*/
+    padding: 10px;
+
+    width: calc(100vw - var(--sidebar-width));
+}
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+
+
+
+.playback-buttons-container {
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*top: 0;*/
+    /*float: left;*/
+    height: 100%;
+    margin: auto 10px;
+    /*vertical-align: middle;*/
+    align-self: flex-start;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.playback-buttons-container button{
+    height: 100%;
+}
+
+.tab-container {
+    /*position: absolute;*/
+    /*left: 300px;*/
+    /*top: 0;*/
+    /*float: left;*/
+    height: 100%;
+    margin: auto 10px;
+    vertical-align: middle;
+    /*text-align: center;*/
+    align-self: stretch;
+    /*flex: 1 1 calc(100% - 200px);*/
+    flex-grow: 1;
+    flex-shrink: 1;
+
+
+}
+
+.seek-range {
+    width: 100%;
+}
+
+@media (min-width: 800px){
+    .main-nav {
+        height: 40px;
+    }
+}
+
+a, a:visited {
+    color: #111111;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #444444;
+    text-decoration: none;
+}
+
+#mod-editor-view {
+
+}

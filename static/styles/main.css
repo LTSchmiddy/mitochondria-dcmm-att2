@@ -1,0 +1,255 @@
+body {
+  background-color: #E6E6E6;
+  font-size: 15px;
+}
+
+.ui-bar {
+  color: #111111;
+  background-color: #7777ff;
+}
+
+.middle-field {
+  position: fixed;
+  top: 40px;
+  /*display: flex;*/
+  left: 0;
+  overflow: hidden;
+  height: calc(100% - 110px);
+  width: 100%;
+  z-index: -5;
+}
+.middle-field .main-view {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+a, a:visited {
+  color: #111111;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #444444;
+  text-decoration: none;
+}
+
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+@media (min-width: 800px) {
+  .main-nav {
+    height: 40px;
+  }
+}
+.drag-handle {
+  width: 6px;
+  height: 100%;
+  background-color: black;
+  cursor: e-resize;
+  float: right;
+}
+
+.sidebar {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 400px;
+}
+
+div.sidebar-content {
+  margin: 0;
+  padding: 20px;
+  width: calc(100% - 6px);
+  height: calc(100vh - 110px);
+  float: left;
+  overflow: scroll;
+  overflow-wrap: unset;
+}
+
+div.sidebar-content a {
+  display: block;
+}
+
+div.sidebar-content a:hover {
+  background-color: #ffffff99;
+  color: #5555ff;
+}
+
+div.sidebar-content summary:hover {
+  background-color: #ffffff99;
+  color: #5555ff;
+}
+
+div.sidebar-content a.sidebar-active {
+  background-color: #ffffff;
+}
+
+.content-field {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  overflow: auto;
+  padding: 10px;
+  width: calc(100vw - 400px);
+}
+
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.playback-buttons-container {
+  height: 100%;
+  width: 20%;
+  margin: auto 10px;
+  align-self: flex-start;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.playback-buttons-container button {
+  height: 100%;
+}
+
+.tab-container {
+  height: 100%;
+  width: 80%;
+  margin: auto 10px;
+  vertical-align: middle;
+  text-align: right;
+  align-self: stretch;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+.tab-container button {
+  height: calc(100% - 20px);
+  margin-top: 10px;
+}
+.tab-container button.main-tab {
+  min-width: 150px;
+}
+.tab-container button.secondary-tab {
+  width: 50px;
+}
+.tab-container button.active-view {
+  background-color: lightgrey;
+  color: black;
+}
+
+.seek-range {
+  width: 100%;
+}
+
+#mod-editor-view .reload-btn {
+  width: 100%;
+}
+#mod-editor-view .file-list {
+  width: 100%;
+  /*overflow-x: hidden;*/
+  padding: 5px 10px;
+  margin: 0;
+}
+#mod-editor-view .content-field {
+  padding: 0;
+}
+#mod-editor-view #content-field .tab-area {
+  min-height: 30px;
+  background-color: grey;
+  width: 100%;
+  margin: 0;
+  padding-left: 5px;
+  vertical-align: center;
+}
+#mod-editor-view #content-field .tab-area button {
+  margin: 0;
+}
+#mod-editor-view #content-field .tab-area .fileclose-btn {
+  background-color: #00000000;
+}
+#mod-editor-view #content-field .tab-area .fileclose-btn:hover {
+  background-color: orangered;
+  color: white;
+}
+#mod-editor-view #content-field .tab-area .editor-tab {
+  background-color: lightgrey;
+  height: 100%;
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+#mod-editor-view #content-field .tab-area .editor-tab button {
+  background-color: #00000000;
+  border: none;
+  height: 100%;
+  margin: 0;
+}
+#mod-editor-view #content-field .tab-area .editor-tab.active-tab {
+  background-color: lightsteelblue;
+}
+#mod-editor-view #content-field .editor-area {
+  height: calc(100% - 30px);
+  width: 100%;
+}
+#mod-editor-view #content-field .editor-area .fileclose-btn {
+  background-color: #00000000;
+}
+#mod-editor-view #content-field .editor-area .fileclose-btn:hover {
+  background-color: orangered;
+  color: white;
+}
+#mod-editor-view #content-field .editor-area .editor-container .editor-topbar {
+  min-height: 30px;
+  padding-left: 10px;
+}
+#mod-editor-view #content-field .editor-area .editor-container .editor-topbar details {
+  display: inline-block;
+  margin-right: 30px;
+}
+#mod-editor-view #content-field .editor-area .editor-container .editor-topbar button {
+  border: none;
+  height: 100%;
+  margin: 0;
+  vertical-align: center;
+}
+#mod-editor-view #content-field .editor-area .editor-container .editor-topbar .editor-drag-handle {
+  cursor: move;
+}
+#mod-editor-view #content-field .editor-area .editor-container .editor-content {
+  height: calc(100% - 30px);
+}
+#mod-editor-view #content-field .editor-area .editor-container .editor-content .jsoneditor {
+  min-height: 700px;
+}
+#mod-editor-view #content-field .editor-area .editor-container .editor-content .jsoneditor .jsoneditor-outer {
+  height: 100%;
+}
+
+#settings-editor-view .settings-buttons-area {
+  padding: 10px;
+}
+
+#python-console-view .python-console {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  overflow: scroll;
+  background-color: black;
+  color: greenyellow;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=main.css.map */

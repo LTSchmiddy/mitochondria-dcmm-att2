@@ -1,0 +1,65 @@
+{% extends "common/base.html" %}
+{% block style %}
+    <style>
+        body {
+            background-color: #4c4c4c;
+        }
+
+        h1, p, ol, a {
+            color: white;
+        }
+
+        #startup-console-area {
+            background-color: black;
+            color: greenyellow;
+            width: 90%;
+            min-height: 90%;
+            margin: auto;
+        }
+
+        #settings-area {
+            background-color: white;
+            overflow: auto;
+
+        }
+
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h1>Mitochondria Startup Settings: </h1>
+    <p>
+        If you're seeing this window, some of Mitochondria's settings need to be configured before it can be used.
+        Please configure the following settings:
+    </p>
+    <ol id="invalid-settings"></ol>
+    <div id="settings-area">
+
+        {% include "components/settings_editor.html" %}
+    </div>
+
+    <button class="btn-primary" onclick="settings_editor_save_settings()">Save</button>
+    <button class="btn-primary" onclick="settings_editor_load_settings()">Revert</button>
+    <a href="/startup">Continue</a>
+
+    <script>
+        async function load_settings_validation() {
+            let invalid_settings = await py.settings.validate_settings();
+
+            let list_str = "";
+
+            for (let i = 0; i < invalid_settings.length; i++) {
+                list_str += `<li>${invalid_settings[i][1]}</li>\n`;
+            }
+
+            $('#invalid-settings').html(list_str);
+        }
+
+        window.addEventListener('pywebviewready', function() {
+            load_settings_validation();
+        });
+
+
+    </script>
+
+{% endblock %}

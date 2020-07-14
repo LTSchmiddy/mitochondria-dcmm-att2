@@ -1,0 +1,37 @@
+
+{% extends "common/common_ui.html" %}
+{% block content %}
+
+    <div id="save-view" class="main-view">
+        {% include "views/saves_view.html" %}
+
+
+    </div>
+    <div id="mod-editor-view" class="main-view">
+        {% include "views/mod_editor_view.html" %}
+
+    </div>
+
+    <div id="settings-editor-view" class="main-view">
+        {% include "views/settings_view.html" %}
+
+    </div>
+
+    <div id="python-console-view" class="main-view">
+        {% include "views/python_console_view.html" %}
+
+    </div>
+
+    <script>
+        const views = [
+            $("#save-view"),
+            $("#mod-editor-view"),
+            $("#settings-editor-view"),
+            $("#python-console-view")
+        ];
+
+
+    </script>
+
+
+{% endblock %}

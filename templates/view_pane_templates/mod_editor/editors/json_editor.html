@@ -1,0 +1,18 @@
+{% extends "view_pane_templates/mod_editor/editors/common/editor_base.html" %}
+
+{% block unique_class %} json-editor-container {% endblock %}
+
+{#{% block save_buttons %}
+
+{% endblock %}#}
+
+{% block topbar %}
+    <button onclick="mod_editor_opened_tabs['{{ path }}'].data_obj.save_file()" class="filesave-btn btn-primary">SAVE</button>
+    <button onclick="mod_editor_opened_tabs['{{ path }}'].data_obj.revert_file() " class="filerevert-btn btn-primary">REVERT</button>
+
+{% endblock %}
+{% block content %}
+
+
+
+{% endblock %}

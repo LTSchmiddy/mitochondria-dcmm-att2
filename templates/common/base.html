@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mitochondria{% endblock %}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/libs/bootstrap/css/bootstrap.css">
+
+    <link href="/static/libs/josdejong-json-editor/jsoneditor.min.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="/static/styles/main.css">
+
+    {% if not settings.current['interface']['jquery-icon-mode'] %}
+        <link rel="stylesheet" type="text/css" href="/static/styles/fa5-icons.css">
+    {% endif %}
+
+{#    <style>#}
+{#        {% include "styles/base_style.css" %}#}
+
+    {#</style>#}
+
+    {% block style %}{% endblock %}
+
+
+
+    <script src="/static/libs/jquery/jquery.js"></script>
+    <script src="/static/libs/popper/popper.js"></script>
+    <script src="/static/libs/bootstrap/js/bootstrap.js"></script>
+    <script src="/static/libs/josdejong-json-editor/jsoneditor.js"></script>
+    <script src="/static/libs/sortablejs/Sortable.js"></script>
+
+    {% if settings.current['interface']['jquery-icon-mode'] %}
+        <script src="/static/libs/fontawesome-free-5.13.1-web/js/all.js" data-auto-replace-svg="nest"></script>
+    {% endif %}
+
+
+
+    {# My JS Files: #}
+    <script src="/static/scripts/python_wrapper_2.js"></script>
+    <script src="/static/scripts/common.js"></script>
+    <script src="/static/scripts/components/sidebar.js"></script>
+    <script src="/static/scripts/components/tab_section_view.js"></script>
+
+
+{#    <script>#}
+{#        let py = null;#}
+{#    </script>#}
+
+    {% block head_scripts %}{% endblock %}
+
+
+</head>
+<body>
+
+{% block body %}{% endblock %}
+
+{% block foot_scripts %}{% endblock %}
+</body>
+</html>

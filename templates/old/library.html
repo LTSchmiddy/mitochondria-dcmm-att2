@@ -1,0 +1,43 @@
+{% extends "common/common_ui.html" %}
+{% block content %}
+
+
+{% include "components/library_view/sidebar.html" %}
+
+<div class="content-field" id="content-field"></div>
+
+<script>
+
+
+
+
+    function set_lib_pane(pane, active_sidebar=null) {
+
+
+        if (active_sidebar === null)
+            return;
+
+        // Changing the highlighted element on the sidebar:
+        let sidebar_elems = document.getElementById('sidebar-content').getElementsByTagName('li');
+
+        for (let i = 0; i < sidebar_elems.length; i++) {
+            elem = sidebar_elems[i];
+
+            if (elem.id === active_sidebar){
+                elem.classList.add('sidebar-active');
+            } else {
+                elem.classList.remove('sidebar-active');
+            }
+        }
+
+    }
+
+    set_lib_pane('/panes/home', 'sidebar-home');
+
+    function on_queue(mrl) {
+        py.playback.open(mrl);
+    }
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+<div class="{% block unique_class %}{% endblock %} editor-container" data-name="{{ name }}" data-path="{{ path }}">
+
+    <div class="editor-topbar">
+        <span class="editor-drag-handle" data-for-path="{{ path }}" style="display: none"> -::- </span>
+        <button onclick="extracted_file_close('{{ path }}')" class="fileclose-btn">X</button>
+        <details>
+            <summary>{{ name }}</summary>
+            {{ path }}
+        </details>
+{#        {% block save_buttons %}
+            <button onclick="extracted_file_save('{{ path }}')" class="filesave-btn btn-primary">SAVE</button>
+            <button onclick="extracted_file_revert('{{ path }}')" class="filerevert-btn btn-primary">REVERT</button>
+        {% endblock %}#}
+
+        {% block topbar %}{% endblock %}
+
+    </div>
+    <div class="editor-content"></div>
+    {% block content %}{% endblock %}
+    <hr/>
+</div>

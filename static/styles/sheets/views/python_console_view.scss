@@ -1,0 +1,14 @@
+#python-console-view {
+    $python-console-width: 100%;
+
+    .python-console {
+        height: 100%;
+        width: $python-console-width;
+        margin: auto;
+        overflow: scroll;
+        background-color: black;
+        color: greenyellow;
+        padding: 10px;
+
+    }
+}

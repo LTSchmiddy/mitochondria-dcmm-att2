@@ -1,0 +1,58 @@
+$sidebar-width: 400px;
+
+.drag-handle{
+    width: 6px;
+    height: 100%;
+    background-color: black;
+    cursor: e-resize;
+    float: right;
+
+}
+
+
+.sidebar {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: $sidebar-width;
+}
+
+div.sidebar-content {
+    margin: 0;
+    padding: 20px;
+    width: calc(100% - 6px);
+    height: calc(100vh - 110px);
+    float: left;
+    overflow: scroll;
+    overflow-wrap: unset;
+}
+
+div.sidebar-content a {
+    display: block;
+}
+
+
+div.sidebar-content a:hover {
+    background-color: #ffffff99;
+    color: #5555ff;
+}
+
+div.sidebar-content summary:hover {
+    background-color: #ffffff99;
+    color: #5555ff;
+}
+
+div.sidebar-content a.sidebar-active {
+    background-color: #ffffff;
+}
+
+
+.content-field {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    overflow: auto;
+    padding: 10px;
+    width: calc(100vw - #{$sidebar-width});
+
+}

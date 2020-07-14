@@ -1,0 +1,87 @@
+#mod-editor-view .reload-btn {
+  width: 100%;
+}
+#mod-editor-view .file-list {
+  width: 100%;
+  /*overflow-x: hidden;*/
+  padding: 5px 10px;
+  margin: 0;
+}
+#mod-editor-view .content-field {
+  padding: 0;
+}
+#mod-editor-view #content-field .tab-area {
+  min-height: 30px;
+  background-color: grey;
+  width: 100%;
+  margin: 0;
+  padding-left: 5px;
+  vertical-align: center;
+}
+#mod-editor-view #content-field .tab-area button {
+  margin: 0;
+}
+#mod-editor-view #content-field .tab-area .fileclose-btn {
+  background-color: #00000000;
+}
+#mod-editor-view #content-field .tab-area .fileclose-btn:hover {
+  background-color: orangered;
+  color: white;
+}
+#mod-editor-view #content-field .tab-area .editor-tab {
+  background-color: lightgrey;
+  height: 100%;
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+#mod-editor-view #content-field .tab-area .editor-tab button {
+  background-color: #00000000;
+  border: none;
+  height: 100%;
+  margin: 0;
+}
+#mod-editor-view #content-field .tab-area .editor-tab.active-tab {
+  background-color: lightsteelblue;
+}
+#mod-editor-view #content-field .editor-area {
+  height: calc(100% - 30px);
+  width: 100%;
+}
+#mod-editor-view #content-field .editor-area .fileclose-btn {
+  background-color: #00000000;
+}
+#mod-editor-view #content-field .editor-area .fileclose-btn:hover {
+  background-color: orangered;
+  color: white;
+}
+#mod-editor-view #content-field .editor-area .editor-container .editor-topbar {
+  min-height: 30px;
+  padding-left: 10px;
+}
+#mod-editor-view #content-field .editor-area .editor-container .editor-topbar details {
+  display: inline-block;
+  margin-right: 30px;
+}
+#mod-editor-view #content-field .editor-area .editor-container .editor-topbar button {
+  border: none;
+  height: 100%;
+  margin: 0;
+  vertical-align: center;
+}
+#mod-editor-view #content-field .editor-area .editor-container .editor-topbar .editor-drag-handle {
+  cursor: move;
+}
+#mod-editor-view #content-field .editor-area .editor-container .editor-content {
+  height: calc(100% - 30px);
+}
+#mod-editor-view #content-field .editor-area .editor-container .editor-content .jsoneditor {
+  min-height: 700px;
+}
+#mod-editor-view #content-field .editor-area .editor-container .editor-content .jsoneditor .jsoneditor-outer {
+  height: 100%;
+}
+
+/*# sourceMappingURL=mod_editor_view.css.map */

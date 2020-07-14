@@ -1,0 +1,23 @@
+
+<ul class="file-list">
+
+{% for i in dir_list['dirs'] %}
+    {% with dir_list = dir_list['dirs'][i] %}
+        <li>
+            <details>
+            <summary>{{ i }}</summary>
+
+                {% include "view_pane_templates/mod_editor/extract_dir_listing.html" %}
+            </details>
+        </li>
+
+    {% endwith %}
+{% endfor %}
+
+{% for i in dir_list['files'] %}
+    <li>
+        <a onclick="extracted_file_load('{{ i }}', '{{ dir_list['files'][i] }}')">{{ i }}</a>
+    </li>
+{% endfor %}
+
+</ul>

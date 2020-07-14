@@ -1,0 +1,29 @@
+<div id="settings-view">
+
+
+</div>
+
+
+<script>
+    let settings_container = $('#settings-view');
+
+    let settings_editor = new JSONEditor(settings_container.get()[0], {
+        mode: 'form'
+    });
+
+    async function settings_editor_load_settings() {
+        settings_editor.set(await py.settings.get_current_settings());
+    }
+
+    async function settings_editor_save_settings() {
+        await py.settings.set_current_settings(settings_editor.get());
+    }
+
+    window.addEventListener('pywebviewready', function() {
+        settings_editor_load_settings();
+    });
+
+
+
+
+</script>
