@@ -1,3 +1,30 @@
-<button class="current-save-entry-button">
+<a
+{#        id="current-save-slot-{{ save['original_user'] }}"#}
+        onclick="save_view_select_current_slot({{ save['original_user'] }})"
+        class="current-save-entry-button btn-light"
+        data-slot-num="{{ save['original_user'] }}"
+>
 
-</button>
+    <div class="top-row">
+        <div class="slot-number">
+            Save Slot {{ save['original_user'] + 1 }}
+        </div>
+
+        <div class="slot-filename">
+            ({{ save['name'] }})
+        </div>
+
+    </div>
+    <div class="bottom-row">
+
+        <div class="slot-timestamp">
+{#            {{ save['datetime']}}#}
+            <span class="display-time-ago" data-timestamp="{{ save['timestamp'] }}">? ago</span>
+        </div>
+        <div class="slot-filesize">
+            {{ save['size_kb'] }}&nbsp;KB
+        </div>
+
+
+    </div>
+</a>

@@ -11,7 +11,6 @@
 
 .playback-buttons-container {
   height: 100%;
-  width: 20%;
   margin: auto 10px;
   align-self: flex-start;
   flex-grow: 0;

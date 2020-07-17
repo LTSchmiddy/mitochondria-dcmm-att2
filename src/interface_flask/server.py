@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, send_from_directory
 import settings
 from logging.config import dictConfig
 
@@ -36,9 +36,15 @@ from interface_flask.api import api
 
 @pages.context_processor
 def jinja2_values():
+    def to_int(x):
+        return int(x)
+
     return dict(
-        settings=settings
+        settings=settings #,
+        # to_int=to_int
     )
+
+
 
 
 app.register_blueprint(pages, url_prefix='/')

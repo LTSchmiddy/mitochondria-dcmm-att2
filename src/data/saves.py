@@ -4,6 +4,7 @@ import shutil
 import ntpath
 from settings import current, paths
 import datetime
+import viewport
 
 default_num_save_slots = 7
 
@@ -69,6 +70,8 @@ class SavesMan:
 
         shutil.copy(get_game_save_path(slot), backup_filepath)
 
+        viewport.window.evaluate_js('load_current_saves_list();')
+
     def update_last_mtime(self, slot: int):
         self.last_mtimes[slot] = os.path.getmtime(get_game_save_path(slot))
 
@@ -84,13 +87,38 @@ class SavesMan:
             if newinfo is not None:
                 save_info.append(newinfo)
 
-        save_info.sort(key=lambda a: a['timestamp'], reverse=True)
+        # save_info.sort(key=lambda a: a['timestamp'], reverse=True)
+        save_info.sort(key=lambda a: a['original_user'], reverse=False)
 
         self.latest_current_save_files = save_info
 
         return save_info
 
-    # await py.exec(`import data.saves; retVal = data.saves.save_man.list_backup_saves(0)`);
+    def count_current_save_slots(self):
+        current_save_folder = paths.get_game_save_dir()
+
+        total = 0
+
+        for i in range(0, self.num_save_slots):
+            if os.path.isfile(os.path.join(current_save_folder, f"user_{i}.dat").replace("\\", "/"), True):
+                total += 1
+
+        return total
+
+    def list_current_saves_found(self):
+        current_save_folder = paths.get_game_save_dir()
+
+        retVal = []
+
+        for i in range(0, self.num_save_slots):
+            if os.path.isfile(os.path.join(current_save_folder, f"user_{i}.dat").replace("\\", "/")):
+                retVal.append(i)
+
+
+
+        return retVal
+
+
     def list_backup_saves(self, slot: int):
         backup_save_folder = paths.get_save_slot_backup_dir(slot)
 
@@ -120,14 +148,7 @@ class SavesMan:
         filename_noext = filename.split(".")[0]
 
         filename_list = filename_noext.split("_")
-        # print(filename)
-        # print(filename_noext)
-        print(filename_list)
 
-        # if len(filename_list) < 2:
-        #     return None
-        # elif len(filename_list) > 3:
-        #     use_timestamp = float(filename_list[2].replace("-", "."))
 
         stamp_source = 'mtime'
         use_timestamp = os.path.getmtime(path)
@@ -147,8 +168,9 @@ class SavesMan:
             'original_user': int(filename_list[1]),
             'timestamp': use_timestamp,
             'timestamp_source': stamp_source,
-            'datetime': str(datetime.datetime.fromtimestamp(float(use_timestamp))),
-            'size': os.path.getsize(path)
+            'datetime': str(datetime.datetime.fromtimestamp(float(use_timestamp))).split('.')[0],
+            'size': os.path.getsize(path),
+            'size_kb': int(os.path.getsize(path)/1000)
         }
 
     def load_past_save_file(self, slot: int, path: str):
@@ -163,6 +185,8 @@ class SavesMan:
         self.make_save_backup(slot, True)
         self.update_last_mtime(slot)
         self.run_monitor = True
+
+
 
 
 

@@ -5,9 +5,14 @@
   width: 100%;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 590px) {
   .main-nav {
     height: 40px;
+  }
+}
+@media (max-width: 590px) {
+  .main-nav {
+    display: none;
   }
 }
 

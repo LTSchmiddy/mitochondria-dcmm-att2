@@ -8,3 +8,7 @@
 /static/bower_components/
 
 *.pyc
+/settings.json
+/dir_tree.json
+/out.log
+/debug.log

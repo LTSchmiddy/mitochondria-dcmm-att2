@@ -1,3 +1,30 @@
-<div class="backup-save-entry">
+<tr
+{#        class="backup-save-entry rainbow-table-debug"#}
+        class="backup-save-entry"
+        data-slot-num="{{ save['original_user'] }}"
+        data-save-backup-name="{{ save['name'] }}"
+>
+    <td class="load-save-button">
+        <button class="btn-dark" onclick="save_view_on_load_save('{{ save['path'] }}')">
+            Revert to this Save
+        </button>
+    </td>
+    <td class="slot-number">
+        Slot {{ save['original_user'] + 1 }}
+    </td>
+    <td class="slot-type">
+        {{ save['type'] }}
+    </td>
+    <td class="slot-timestamp">
+{#        {{ save['datetime']}}#}
+        <span class="display-time-ago" data-timestamp="{{ save['timestamp'] }}">? ago</span>
+    </td>
+    <td class="slot-filesize">
+        {{ save['size_kb'] }}&nbsp;KB
+    </td>
+    <td class="slot-filename">
+        {{ save['name'] }}
+    </td>
 
-</div>
+
+</tr>

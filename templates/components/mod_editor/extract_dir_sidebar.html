@@ -1,7 +1,7 @@
 
 
 <div class="sidebar" id="lib-sidebar">
-    <button class="btn-primary reload-btn" onclick="reload_dir()">Reload</button>
+    <button class="btn-primary reload-btn" onclick="mod_editor_reload_dir()">Reload</button>
     <div id="sidebar-content" class="sidebar-content">
 
 
@@ -23,10 +23,10 @@
         mod_editor_sidebar = new Sidebar('lib-sidebar', 'content-field');
 
         mod_editor_sidebar_content = $('#sidebar-content');
-        reload_dir();
+        mod_editor_reload_dir();
     });
 
-    function reload_dir(){
+    function mod_editor_reload_dir(){
         mod_editor_sidebar_content.text("Loading...")
 
         mod_editor_sidebar_content.load("/panes/mod_editor/extract_dir_listing");

@@ -10,7 +10,7 @@ from viewport.js_api import JsApi
 import viewport
 
 
-from viewport.js_api.modules import file, pak, std, mod_settings
+from viewport.js_api.modules import file, pak, std, mod_settings, save_info, dc_game
 
 
 def create_api_modules(api: Type[JsApi]):
@@ -19,6 +19,8 @@ def create_api_modules(api: Type[JsApi]):
     file.create_files_module(api)
     std.create_std_module(api)
     mod_settings.create_settings_module(api)
+    save_info.create_saves_module(api)
+    dc_game.create_game_module(api)
 
 
 

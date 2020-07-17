@@ -44,7 +44,7 @@ def background_thread(window: wv.window):
     while viewport.window_is_alive:
         time.sleep(.5)
         saves.save_man.monitor_all_saves()
-        deadcells_game.game_man.update()
+        # deadcells_game.game_man.update()
         # update_js_properties()
 
 

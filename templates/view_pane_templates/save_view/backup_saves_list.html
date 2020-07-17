@@ -1,0 +1,6 @@
+{% for i in saves %}
+    {% with save = i %}
+        {% include "components/save_view/backup_save_entry.html" %}
+    {% endwith %}
+
+{% endfor %}

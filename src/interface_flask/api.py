@@ -39,7 +39,12 @@ def show_image():
     return resp
 
 
-
+@api.route('/es6-static/<path:filename>')
+def es6_static(filename):
+    return send_from_directory(current['interface']['api']['static-dir'],
+                               filename, as_attachment=True,
+                               mimetype='text/javascript'
+    )
 
 
 

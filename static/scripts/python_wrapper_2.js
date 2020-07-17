@@ -4,6 +4,7 @@ console.log("loading Python_Wrapper");
 window.toolman__is_mproc_running = null;
 window.std_handler__main_stdout = null;
 window.std_handler__main_stdout_as_html = null;
+window.game_man__is_game_detected = null;
 
 let py = null;
 // let py_exec = null;
@@ -12,6 +13,12 @@ window.addEventListener('pywebviewready', function() {
     
     py = {
         close_debug: pywebview.api.close_debug,
+        dc_game: {
+            check_for_game: pywebview.api.dc_game.check_for_game,
+            is_game_detected: pywebview.api.dc_game.is_game_detected,
+            quit_game: pywebview.api.dc_game.quit_game,
+            start_game: pywebview.api.dc_game.start_game
+        },
         exec: pywebview.api.exec,
         files: {
             exists: pywebview.api.files.exists,
@@ -43,6 +50,11 @@ window.addEventListener('pywebviewready', function() {
         },
         print: pywebview.api.print,
         quit: pywebview.api.quit,
+        saves: {
+            count_current_saves: pywebview.api.saves.count_current_saves,
+            list_current_saves_found: pywebview.api.saves.list_current_saves_found,
+            load_past_save_file: pywebview.api.saves.load_past_save_file
+        },
         settings: {
             get_current_settings: pywebview.api.settings.get_current_settings,
             set_current_settings: pywebview.api.settings.set_current_settings,
