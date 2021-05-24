@@ -34,19 +34,41 @@ class JsApi:
         return setattr(cls, name, types.MethodType(func, cls))
 
     @classmethod
+    def add_module_method(cls, module_header: str, method: callable):
+        if hasattr(method, "__name__"):
+            use_name = module_header.replace(".", "__") + "__" + method.__name__
+            # print(f"adding function {i} as {use_name}")
+
+            # if attr_mode:
+            try:
+                cls.add_attr(method, use_name)
+            except TypeError as e:
+                print(f"{method.__name__}: {e}")
+
+        else:
+            print(f"Error in loading JsApi: '{method}' is has no __name__")
+
+    @classmethod
+    def add_anonymous_module_method(cls, module_header: str, m_name: str, method: callable):
+            use_name = module_header.replace(".", "__") + "__" + m_name.__name__
+            # print(f"adding function {i} as {use_name}")
+            try:
+                cls.add_attr(method, use_name)
+            except TypeError as e:
+                print(f"{method.__name__}: {e}")
+
+    @classmethod
     def add_module_method_list(cls, module_header: str, method_list: list):
         for i in method_list:
-            # for j in i:
-            #     print(j)
-            if hasattr(i, "__name__"):
-                use_name = module_header.replace(".", "__") + "__" + i.__name__
-                # print(f"adding function {i} as {use_name}")
+            if isinstance(i, tuple):
+                cls.add_anonymous_module_method(module_header, i[0], i[1])
 
-                # if attr_mode:
-                try:
-                    cls.add_attr(i, use_name)
-                except TypeError as e:
-                    print(f"{i.__name__}: {e}")
+            elif hasattr(i, "__name__"):
+                cls.add_module_method(module_header, i)
+
+            else:
+                print(f"Error in loading JsApi: js_api could not process data '{str(i)}"'')
+
 
 
 

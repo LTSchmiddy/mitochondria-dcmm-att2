@@ -7,6 +7,7 @@
 /blob_storage/
 /static/bower_components/
 
+
 *.pyc
 /settings.json
 /dir_tree.json

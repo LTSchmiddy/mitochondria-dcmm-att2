@@ -51,19 +51,18 @@ def create_base_module(api: Type[JsApi]):
         # if args is None:
         #     args = {}
 
-        # if newline_marker != "" or newline_marker is not None:
-        #     code = code.replace(newline_marker, "\n")
-
         exec("global retVal\n" + code)
         global retVal
-
+        out = None
         try:
-            return retVal
+            out = retVal
         except NameError:
             return None
+        retVal = None
+        return out
 
-    def run_game():
-        pass
+    # def run_game():
+    #     pass
 
 
     api.add_attr(pyprint, 'print')

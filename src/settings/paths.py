@@ -66,5 +66,11 @@ def get_save_slot_backup_dir(slot: int):
 def get_game_save_dir():
     return os.path.join(settings.current['dirs']['game_directory'], settings.current['dirs']['game_save_dir']).replace("\\", "/")
 
-def get_game_save_slot_path(slot: int):
-    return os.path.join(get_game_save_dir(), f"user_{slot}.dat").replace("\\", "/")
+# def get_game_save_slot_path(slot: int):
+#     return os.path.join(get_game_save_dir(), f"user_{slot}.dat").replace("\\", "/")
+
+def get_save_name(slot: int) -> str:
+    return f"user_{slot}.dat"
+
+def get_game_save_path(slot: int) -> str:
+    return os.path.join(get_game_save_dir(), get_save_name(slot)).replace("\\", "/")

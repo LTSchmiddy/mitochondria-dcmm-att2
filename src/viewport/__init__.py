@@ -24,6 +24,9 @@ p_debug = False
 
 
 window: wv.window = None
+# windowThread = None
+window_is_alive = False
+
 
 def create_window(auto_load_ui: bool = True, window_name: str = "Mitochondria - Dead Cells Mod Manager"):
     global window
@@ -52,8 +55,7 @@ def create_window(auto_load_ui: bool = True, window_name: str = "Mitochondria - 
     window.closed += on_window_closed
 
 
-# windowThread = None
-window_is_alive = False
+
 
 def start_window():
     global p_gui, p_http_server, p_debug, window, window_is_alive

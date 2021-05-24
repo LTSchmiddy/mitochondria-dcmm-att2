@@ -16,7 +16,7 @@ panes = Blueprint(
     # static_folder=settings['interface']['view-panes']['static-dir']
 )
 
-
+# Save View Panes
 @panes.route('/save_view/current_saves_list', methods=['GET', 'POST'])
 def save_view__current_saves_list():
     return render_template("view_pane_templates/save_view/current_saves_list.html", saves=saves.save_man.list_current_save_slots())
@@ -24,10 +24,15 @@ def save_view__current_saves_list():
 @panes.route('/save_view/backup_saves_list', methods=['GET', 'POST'])
 def save_view__backup_saves_list():
     slot = int(request.form.get('slot'))
-    return render_template("view_pane_templates/save_view/backup_saves_list.html", saves=saves.save_man.list_backup_saves(slot))
+    how_many = None
+
+    if request.form.get('how_many') is not None:
+        how_many = int(request.form.get('how_many'))
+
+    return render_template("view_pane_templates/save_view/backup_saves_list.html", saves=saves.save_man.list_backup_saves(slot, how_many))
 
 
-
+# Mod Editor Panes
 @panes.route('/mod_editor/extract_dir_listing')
 def mod_editor__extract_dir_listing():
     if len(os.listdir(paths.get_extract_dir())) == 0:

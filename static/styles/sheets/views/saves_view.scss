@@ -80,53 +80,91 @@
         height: 100%;
         left: calc( 10px + #{$current-save-slots-width});
         padding: 0 20px;
+        //top: 30px;
 
         //float: right;
-        overflow: auto;
-        .save-slot-backups-list {
-
-            .backup-save-entry {
-                //min-height: 50px;
-                margin: 10px 0;
-                //padding: 10px 0;
 
 
-                td {
-                    margin: 0 10px;
 
-                    button {
-                        display: block;
-                        width: 100%;
-                        height: 100%;
+
+        .save-slot-backups-list-frame{
+            //position: relative;
+            overflow: auto;
+            //top: 40px;
+            //height: calc(100% - 40px);
+
+            height: 100%;
+            .save-slot-backups-header {
+                z-index: 10 !important;
+
+                vertical-align: bottom;
+
+                label {
+                    width: 100%;
+                    //text-align: right;
+                    vertical-align: bottom;
+                    margin: 0 0;
+                    padding: 0 0;
+
+                    input {
+                        width: 20%;
+                        margin: 0 10px;
+                        padding: 0 0;
                     }
 
                 }
 
 
+
             }
-            .rainbow-table-debug {
-                .load-save-button {
-                    background-color: red;
-                }
 
-                .slot-number {
-                    background-color: yellow;
-                }
+            .save-slot-backups-list {
 
-                .slot-type {
-                    background-color: orange;
-                }
 
-                .slot-filename {
-                    background-color: green;
-                }
 
-                .slot-timestamp {
-                    background-color: blue;
-                }
+                .backup-save-entry {
+                    //min-height: 50px;
+                    margin: 10px 0;
+                    //padding: 10px 0;
 
-                .slot-filesize {
-                    background-color: violet;
+
+                    td {
+                        margin: 0 10px;
+
+                        button {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                    }
+
+
+                }
+                .rainbow-table-debug {
+                    .load-save-button {
+                        background-color: red;
+                    }
+
+                    .slot-number {
+                        background-color: yellow;
+                    }
+
+                    .slot-type {
+                        background-color: orange;
+                    }
+
+                    .slot-filename {
+                        background-color: green;
+                    }
+
+                    .slot-timestamp {
+                        background-color: blue;
+                    }
+
+                    .slot-filesize {
+                        background-color: violet;
+                    }
                 }
             }
         }

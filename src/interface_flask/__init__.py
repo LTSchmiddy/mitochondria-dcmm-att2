@@ -1,3 +1,4 @@
+from __future__ import annotations
 import os
 import socket
 import threading
@@ -14,8 +15,16 @@ from settings import current
 address = current['interface']['flask-address']
 
 used_ports = []
+port: int = None
+server_thread: ServerThread = None
 
-def find_free_port(starting_port=10000, add_to_used = True):
+def init():
+    global port, server_thread
+    port = find_free_port(current['interface']['flask-port'])
+    server_thread = ServerThread(interface_flask.server.app)
+
+
+def find_free_port(starting_port=10000, add_to_used = True) -> int:
     # global port, starting_port
     # global starting_port, used_ports
     global used_ports
@@ -70,8 +79,6 @@ def get_main_addr():
     # return f"http://{address}:{port}/blank"
 
 
-port = find_free_port(current['interface']['flask-port'])
-
 class ServerThread(threading.Thread):
 
     def __init__(self, app):
@@ -90,8 +97,6 @@ class ServerThread(threading.Thread):
         print("TRYING TO SHUTDOWN...")
         # sys.exit(0)
         self.srv.shutdown()
-
-server_thread = ServerThread(interface_flask.server.app)
 
 def start_server():
     global server_thread

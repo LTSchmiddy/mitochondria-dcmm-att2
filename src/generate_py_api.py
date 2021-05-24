@@ -2,7 +2,7 @@
 import sys
 import json
 from viewport.js_api import JsApi
-from viewport.bg_tasks import cef_bound_properties
+from viewport.js_api.cef_bindings import cef_bound_properties
 
 from settings import current
 # Config
@@ -31,7 +31,7 @@ def rebuild_api():
     cef_props_string = ""
 
     for i in cef_bound_properties:
-        cef_props_string += f"window.{i} = null;\n"
+        cef_props_string += f"window.{i[0]} = null;\n"
 
     iterate_api(api_struct)
 

@@ -13,7 +13,6 @@ import settings
 
 def create_settings_module(api: Type[JsApi]):
     def get_current_settings(self):
-        # return std_handler.my_stdout.get_all().replace("\n", "\n<br/>")
         return settings.current
 
     def set_current_settings(self, new_settings):

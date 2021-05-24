@@ -6,17 +6,69 @@
 <div id="current-save-slot-backups" class="current-save-slot-backups">
 {#    <div id="current-save-slot-backups-header"></div>#}
     {#    <table id="save-slot-backups-list" class="save-slot-backups-list">#}
-    <table id="save-slot-backups-list" class="save-slot-backups-list table">
+    <div class="save-slot-backups-list-frame">
+        <table class="table">
+            <thead>
+
+                <tr class="save-slot-backups-header">
+                    <th class="load-save-button">
 
 
+                        <label for="save-slot-backups-list-how-many">
+                            Showing
+                            <input
+                                    id="save-slot-backups-list-how-many"
+                                    type="number"
+                                    value="20"
+{#                                    onchange="save_view_backup_list_how_many = $(this).attr('value');#}
+                                    onchange="
+                                        save_view_backup_list_how_many = this.value;
+                                        console.log(save_view_backup_list_how_many);
+                                        save_view_load_backup_saves_list();
+                                    "
+                            />
+                            Entries
+{#                            <script>#}
+{#                                on_save#}
+{#                            </script>#}
+                        </label>
 
-    </table>
+
+                    </th>
+                    <th class="slot-number">
+                        Save Slot
+                    </th>
+                    <th class="slot-type">
+                        Save Type
+                    </th>
+                    <th class="slot-timestamp">
+                        Save Data Age
+                    </th>
+                    <th class="backup-timestamp">
+                        Backup Age
+                    </th>
+                    <th class="slot-filesize">
+                        Save Data Size
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody id="save-slot-backups-list" class="save-slot-backups-list">
+
+
+            </tbody>
+
+        </table>
+    </div>
 </div>
 
 <script>
-    let save_view_selected_current_slot = 0;
+
     let save_view_current_save_slot_area = $('#current-save-slots-list');
     let save_view_save_slot_backup_list_area = $('#save-slot-backups-list');
+
+    let save_view_selected_current_slot = 0;
+    let save_view_backup_list_how_many = 20;
 
     function load_current_saves_list() {
         save_view_current_save_slot_area.load("/panes/save_view/current_saves_list", {}, function (status) {
@@ -55,7 +107,10 @@
     function save_view_load_backup_saves_list() {
         save_view_save_slot_backup_list_area.load(
             "/panes/save_view/backup_saves_list",
-            {slot: save_view_selected_current_slot},
+            {
+                slot: save_view_selected_current_slot,
+                how_many: save_view_backup_list_how_many,
+            },
             function (status) {
                 time_data.update_all_display_time_ago();
             });
@@ -66,10 +121,9 @@
         py.saves.load_past_save_file(save_view_selected_current_slot, path);
     }
 
+    {#$(document).ready(()=>{#}
     window.addEventListener('pywebviewready', function() {
         load_current_saves_list();
     });
-
-
 
 </script>

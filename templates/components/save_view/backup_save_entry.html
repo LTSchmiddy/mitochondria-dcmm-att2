@@ -5,26 +5,33 @@
         data-save-backup-name="{{ save['name'] }}"
 >
     <td class="load-save-button">
-        <button class="btn-dark" onclick="save_view_on_load_save('{{ save['path'] }}')">
+        <button class="btn-dark" onclick="save_view_on_load_save('{{ save.filepath }}')">
             Revert to this Save
         </button>
     </td>
     <td class="slot-number">
-        Slot {{ save['original_user'] + 1 }}
+        Slot {{ save.original_user + 1 }}
     </td>
     <td class="slot-type">
-        {{ save['type'] }}
+        {% if save.save_type.name == 'game_save' %}
+            Game Save
+        {% else %}
+            Reloaded Save
+        {% endif %}
+{#        {{ save.save_type.name }}#}
     </td>
     <td class="slot-timestamp">
-{#        {{ save['datetime']}}#}
-        <span class="display-time-ago" data-timestamp="{{ save['timestamp'] }}">? ago</span>
+        <span class="display-time-ago" data-timestamp="{{ save.original_timestamp }}">? ago</span>
+    </td>
+    <td class="backup-timestamp">
+        <span class="display-time-ago" data-timestamp="{{ save.file_timestamp }}">? ago</span>
     </td>
     <td class="slot-filesize">
-        {{ save['size_kb'] }}&nbsp;KB
+        {{ save.data_size_kb }}&nbsp;KB
     </td>
-    <td class="slot-filename">
-        {{ save['name'] }}
-    </td>
+    {#<td class="slot-filename">
+        {{ save.filename }}
+    </td>#}
 
 
 </tr>

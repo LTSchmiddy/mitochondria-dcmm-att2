@@ -5,6 +5,7 @@ window.toolman__is_mproc_running = null;
 window.std_handler__main_stdout = null;
 window.std_handler__main_stdout_as_html = null;
 window.game_man__is_game_detected = null;
+window.lambda_test = null;
 
 let py = null;
 // let py_exec = null;

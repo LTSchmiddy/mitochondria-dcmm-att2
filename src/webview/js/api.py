@@ -70,7 +70,9 @@ window.pywebview = {
 
                 if (isError) {
                     var pyError = JSON.parse(value);
-                    var error = new Error(pyError.message);
+                    console.log(pyError);
+                    // var error = new Error(pyError.message);
+                    var error = new Error("Python Error: \\n-> " + pyError.stack);
                     error.name = pyError.name;
                     error.stack = pyError.stack;
 
