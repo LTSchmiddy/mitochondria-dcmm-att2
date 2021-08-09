@@ -21,7 +21,7 @@ pycparser==2.20
 PyInstaller==3.6
 pythonnet==2.4.0
 pywebview==3.2
-pywin32==228
+pywin32==301
 pywin32-ctypes==0.2.0
 requests==2.23.0
 six==1.14.0
